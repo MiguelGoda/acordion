@@ -13,6 +13,8 @@
   --light-grayish-blue: hsl(240, 5%, 91%);
 }
 body {
+  display: block;
+    padding-top: 148px;
   background-image: linear-gradient(
     to bottom,
     var(--soft-violet) 0%,
@@ -20,34 +22,48 @@ body {
   );
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .wrapper {
+  max-width: 920px;
+  position: relative;
   background: white;
-  margin: 9em 1.5em 5em 1.5em;
+  margin: 0 auto 0;
   border-radius: 20px;
+  display: block;
+  padding-top: 90px;
+  width: calc(100% - 30px);
 }
 .icon {
+  width: 100%;
   position: absolute;
-  margin-top: -107px;
-  margin-left: 15px;
+  top: -110px;
+  padding: 0;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 240px;
+  text-align: center;
+  overflow: visible;
 }
-.icon__arroba {
+.icon img.icon-mobile{
+  /* padding-right: 30px; */
+  margin: 0 auto;
+  animation: pulse 3s ease-in-out infinite;
+}
+.icon img.icon-desktop{
   display: none;
 }
-.icon_principal {
-  position: absolute;
-  margin-top: -100px;
-}
-.icon_sombra {
-  position: relative;
-  margin-top: -90px;
-  margin-left: 30px;
-}
 .contenido {
-  padding: 100px 0 50px 0;
+  padding: 30px 0 50px 0;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -108,6 +124,35 @@ body {
   overflow: inherit;
 }
 
+@-webkit-keyframes pulse {
+  0% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px)
+  }
+  50% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px)
+  }
+  100% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px)
+  }
+}
+@keyframes pulse {
+  0% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px)
+  }
+  50% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px)
+  }
+  100% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px)
+  }
+}
+
 @media screen and (min-width: 1024px) {
   body {
     display: flex;
@@ -118,29 +163,17 @@ body {
   }
   .wrapper{
       display: flex;
-      flex-direction: row;
+      /* flex-direction: row; */
       align-items: center;
   }
-  .icon{
-      margin-top: initial;
-      margin-left: initial;
-      position: initial;
+  .icon img.icon-mobile{
+
+    display: none;
   }
-  .icon__arroba{
-      display: initial;
-      width: auto;
-      
-  }
-  .icon_principal{
-    /* display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-image: url(/images/illustration-woman-online-desktop.svg) no-repeat;
-    width: auto; 
-    height: auto;  */
-  }
-  #cambio{
-      background-image: url(/images/illustration-woman-online-desktop.svg);
+  .icon img.icon-desktop{
+    display: initial;
+    margin: 0 auto;
+    /* animation: pulse 3s ease-in-out infinite; */
   }
   .acordeon-tittle:hover {
     color: var(--soft-red);
