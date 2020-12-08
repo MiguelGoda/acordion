@@ -25,6 +25,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  height: auto;
 
 }
 
@@ -45,7 +46,7 @@ body {
   padding: 0;
   padding-right: 40px;
   padding-bottom: 10px;
-  background-image: url(../images/bg-pattern-mobile.svg);
+  /* background-image: url(../images/bg-pattern-mobile.svg); */
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 240px;
@@ -102,7 +103,7 @@ body {
 .acordeon-item::after {
   content: "";
   height: 1px;
-  width: 74%;
+  width: 85%;
   background: var(--dark-grayish-blue);
   position: absolute;
 }
@@ -153,30 +154,64 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 991px) {
   body {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    justify-content: center;
+    height: 100%;
+    padding: 40px 0;
   }
   .wrapper{
+    position: relative;
+    padding-top: 0;
       display: flex;
-      /* flex-direction: row; */
-      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 200px);
+      max-width: 920px;
+      margin: 0 auto 0;
+      box-shadow: 0px 15px 30px -15px rgba(0,0,0,0.4);
+  }
+  .icon{
+    padding: 70px 0 80px;
+    width: 390px;
+    position: relative;
+    line-height: 0;
+    overflow: hidden;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: right 0px top -20px;
+    text-align: initial;
+    top: 0;
+    background-size: cover;
+    height: fit-content;
+
+  }
+  .icon::after{
+    content: url(../images/illustration-box-desktop.svg);
+    position: absolute;
+    left: -105px;
+    top: 190px;
+    float: right;
+    animation: pulse 3s ease-in-out infinite;
   }
   .icon img.icon-mobile{
-
     display: none;
   }
   .icon img.icon-desktop{
+    float: right;
     display: initial;
     margin: 0 auto;
-    /* animation: pulse 3s ease-in-out infinite; */
   }
   .acordeon-tittle:hover {
     color: var(--soft-red);
     cursor: pointer;
+  }
+  .acordeon-item::after{
+    width: 34%;
+  }
+  .contenido{
+    padding: 70px 0 80px;
+    width: calc(100% - 480px);
   }
 }
