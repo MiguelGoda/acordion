@@ -187,7 +187,7 @@ body {
     height: fit-content;
 
   }
-  .icon::after{
+  .wrapper::after{
     content: url(../images/illustration-box-desktop.svg);
     position: absolute;
     left: -105px;
