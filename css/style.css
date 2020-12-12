@@ -26,7 +26,8 @@ body {
   align-items: center;
   flex-direction: column;
 	min-height: 100vh;
-	min-width: auto;
+  min-width: 375px;
+  
 
 }
 
@@ -45,7 +46,6 @@ body {
   position: absolute;
   top: -110px;
   padding: 0;
-  padding-right: 40px;
   padding-bottom: 10px;
   background-image: url(../images/bg-pattern-mobile.svg);
   background-position: bottom;
@@ -55,7 +55,7 @@ body {
   overflow: visible;
 }
 .icon img.icon-mobile{
-  /* padding-right: 30px; */
+  padding-right: 30px;
   margin: 0 auto;
   animation: pulse 3s ease-in-out infinite;
 }
